@@ -152,17 +152,46 @@ figcaption a {
     max-height: 100px;
     display: block;
 }
+.footer{
+    background-color: var(--color5);
+}
+footer{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 auto;
+    max-width:1200px;
+    padding: 3rem;
+}
+footer h4 {
+    margin-top: 0;
+}
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+footer li {
+    margin-right: 1rem;
+}
 
+footer address {
+    font-style: normal;
+    margin-top: 2rem;
+    font-weight: bold;
+}
 
 /* turn on flexbox here - prior to this, elements stacked individually as blocks */
 
 @media (min-width: 550px) {
-    section ul {
+    section ul, footer {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
     }
-    section li {
+    section li , .social,
+    address  {
         flex-basis: 49.5%;
     }
     /* turn off object position, inherit object-fit: cover */
@@ -180,13 +209,19 @@ figcaption a {
         shape-outside: polygon(35.84% 94.87%, 34.64% 87.05%, 51.64% 4.06%, 55.1% 2.38%);
         max-height: 211px;
     }
+    footer address {
+        margin-top: 0;
+    }
 }
 
 @media (min-width: 800px) {
     section h2 {
         margin-left: 100px;
     }
-    section li {
+    section li ,  .social {
         flex-basis: 32.5%;
+    }
+    address {
+        flex-basis: 65.5%;
     }
 }
